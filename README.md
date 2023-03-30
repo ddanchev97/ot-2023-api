@@ -9,7 +9,7 @@ To install the application, you have to install(links how to be installed will b
 * run command: ``composer install`` to install all packages that application requires to work normally.
 
 ## Add google translate key
-* Paste your JSON key to google-translate-auth.json file in the root directory.
+* Add new file in root directory named ``google-translate-auth.json`` and paste your JSON key into file.
 
 ## Replace google cloud console project id
 Replace ``GOOGLE_CLOUD_PROJECT=proj_id`` in .env.local in root directory with your project_id.
