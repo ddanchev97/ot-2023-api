@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Translation API{% endblock %}
+
+{% block body %}
+<div class="example-wrapper">
+    <h1>Translation API✅</h1>
+
+    <div class="form-group">
+        <label for="languageSelectBox">Select language to translate</label>
+        <select id="languageSelectBox" class="form-control form-control-sm col col-sm-3">
+            <option value="en">English</option>
+            <option value="bg">Български</option>
+            <option value="ro">Română</option>
+        </select>
+
+        <div class="form-row">
+            <div class="col">
+                <label for="InputTextArea">Input text</label>
+                <textarea class="form-control" id="InputTextArea" rows="3"></textarea>
+            </div>
+            <div class="col">
+                <label for="outputTextArea">Translated text</label>
+                <textarea class="form-control" id="outputTextArea" rows="3" disabled></textarea>
+            </div>
+        </div>
+        <button id="translateButton" class="btn btn-primary" type="button">Translate</button>
+    </div>
+</div>
+
+
+<script>
+    // Get references to the form elements
+    const languageSelectBox = document.getElementById('languageSelectBox');
+    const inputTextArea = document.getElementById('InputTextArea');
+    const outputTextArea = document.getElementById('outputTextArea');
+    const translateButton = document.getElementById('translateButton');
+
+    // Add event listener to translate button
+    translateButton.addEventListener('click', function() {
+        // Get selected language and input text
+        const targetLanguage = languageSelectBox.value;
+        const inputText = inputTextArea.value;
+
+        // Create AJAX request to translate API
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    // Parse the JSON response into a JavaScript object
+                    const response = JSON.parse(xhr.responseText);
+
+                    // Display the translated text
+                    outputTextArea.value = response.text;
+                } else {
+                    // Display error message
+                    outputTextArea.value = 'Error: ' + xhr.statusText;
+                }
+            }
+        };
+        xhr.open('POST', 'http://127.0.0.1:8000/translate', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(JSON.stringify({targetLanguage, text: inputText}));
+    });
+</script>
+{% endblock %}

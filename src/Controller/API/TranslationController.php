@@ -18,30 +18,43 @@ class TranslationController extends AbstractController
      */
     public function translate(Request $request, GoogleTranslate $translate, LoggerInterface $logger): JsonResponse
     {
-        $text = $request->get('text');
-        $sourceLanguage = $request->get('sourceLanguage');
-        $targetLanguage = $request->get('targetLanguage');
+        // Get the JSON data from the request body
+        $jsonData = $request->getContent();
 
-        if (!is_null($text) && !is_null($sourceLanguage) && !is_null($targetLanguage)) {
+        // Convert the JSON data into a PHP object
+        $data = json_decode($jsonData);
+
+        // Extract the language and text from the data object
+        $targetLanguage = $data->targetLanguage;
+        $text = $data->text;
+
+        $logger->error('error', [$text, $targetLanguage]);
+
+        if (!is_null($text) && !is_null($targetLanguage)) {
             try {
+                $sourceLanguage = $translate->detectLanguage($text);
+                $sourceLanguage = $sourceLanguage['languageCode'];
+
                 $translated = $translate->translate($text, $targetLanguage, $sourceLanguage);
             } catch (Exception $exception) {
                 $logger->error($exception->getMessage());
-                return $this->json(['status' => 'error']);
+                return $this->json(['status' => 'error', 'error' => $exception->getMessage()]);
             }
 
-            if (isset($translated['translated'])) {
-                $translatedText = $translated['translated'];
+            $logger->error('error', [$translated, $sourceLanguage]);
+            if (isset($translated['text'])) {
+                $translatedText = $translated['text'];
                 return $this->json([
                     'status' => 'success',
-                    'data' => $translatedText
+                    'text' => $translatedText
                 ]);
             }
         }
 
         return $this->json([
             'status' => 'error',
-            'message' => 'Translation failed'
+            'message' => 'Translation failed',
+            'data' => [$text, $targetLanguage]
         ]);
     }
 }
