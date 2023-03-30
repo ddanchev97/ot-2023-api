@@ -3,12 +3,15 @@
 /.env.local
 /.env.local.php
 /.env.*.local
-/.google-translate-auth.json
 /config/secrets/prod/prod.decrypt.private.php
 /public/bundles/
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
+
+### google translation authentication
+/.google-translate-auth.json
+###< google translation authentication ###
 
 ###> symfony/webpack-encore-bundle ###
 /node_modules/
