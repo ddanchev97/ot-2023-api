@@ -10,7 +10,7 @@
 ###< symfony/framework-bundle ###
 
 ### google translation authentication
-/.google-translate-auth.json
+google-translate-auth.json
 ###< google translation authentication ###
 
 ###> symfony/webpack-encore-bundle ###
