@@ -13,8 +13,8 @@ class ComposerStaticInit17e30a4265d9ae40f1307685025c48e8
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
-        '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
         '23c18046f52bef3eea034657bafda50f' => __DIR__ . '/..' . '/symfony/polyfill-php81/bootstrap.php',
+        '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
@@ -28,6 +28,7 @@ class ComposerStaticInit17e30a4265d9ae40f1307685025c48e8
         ),
         'S' => 
         array (
+            'Symfony\\WebpackEncoreBundle\\' => 28,
             'Symfony\\Runtime\\Symfony\\Component\\' => 34,
             'Symfony\\Polyfill\\Php81\\' => 23,
             'Symfony\\Polyfill\\Php80\\' => 23,
@@ -57,6 +58,7 @@ class ComposerStaticInit17e30a4265d9ae40f1307685025c48e8
             'Symfony\\Component\\Console\\' => 26,
             'Symfony\\Component\\Config\\' => 25,
             'Symfony\\Component\\Cache\\' => 24,
+            'Symfony\\Component\\Asset\\' => 24,
             'Symfony\\Bundle\\TwigBundle\\' => 26,
             'Symfony\\Bundle\\FrameworkBundle\\' => 31,
             'Symfony\\Bridge\\Twig\\' => 20,
@@ -123,6 +125,10 @@ class ComposerStaticInit17e30a4265d9ae40f1307685025c48e8
         'Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
+        ),
+        'Symfony\\WebpackEncoreBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src',
         ),
         'Symfony\\Runtime\\Symfony\\Component\\' => 
         array (
@@ -239,6 +245,10 @@ class ComposerStaticInit17e30a4265d9ae40f1307685025c48e8
         'Symfony\\Component\\Cache\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/cache',
+        ),
+        'Symfony\\Component\\Asset\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/asset',
         ),
         'Symfony\\Bundle\\TwigBundle\\' => 
         array (
@@ -409,7 +419,6 @@ class ComposerStaticInit17e30a4265d9ae40f1307685025c48e8
 
     public static $classMap = array (
         'App\\Controller\\API\\TranslationController' => __DIR__ . '/../..' . '/src/Controller/API/TranslationController.php',
-        'App\\Controller\\IndexController' => __DIR__ . '/../..' . '/src/Controller/IndexController.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
         'App\\Model\\GoogleTranslate' => __DIR__ . '/../..' . '/src/Model/GoogleTranslate.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
@@ -1605,6 +1614,24 @@ class ComposerStaticInit17e30a4265d9ae40f1307685025c48e8
         'Symfony\\Bundle\\TwigBundle\\DependencyInjection\\TwigExtension' => __DIR__ . '/..' . '/symfony/twig-bundle/DependencyInjection/TwigExtension.php',
         'Symfony\\Bundle\\TwigBundle\\TemplateIterator' => __DIR__ . '/..' . '/symfony/twig-bundle/TemplateIterator.php',
         'Symfony\\Bundle\\TwigBundle\\TwigBundle' => __DIR__ . '/..' . '/symfony/twig-bundle/TwigBundle.php',
+        'Symfony\\Component\\Asset\\Context\\ContextInterface' => __DIR__ . '/..' . '/symfony/asset/Context/ContextInterface.php',
+        'Symfony\\Component\\Asset\\Context\\NullContext' => __DIR__ . '/..' . '/symfony/asset/Context/NullContext.php',
+        'Symfony\\Component\\Asset\\Context\\RequestStackContext' => __DIR__ . '/..' . '/symfony/asset/Context/RequestStackContext.php',
+        'Symfony\\Component\\Asset\\Exception\\AssetNotFoundException' => __DIR__ . '/..' . '/symfony/asset/Exception/AssetNotFoundException.php',
+        'Symfony\\Component\\Asset\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/symfony/asset/Exception/ExceptionInterface.php',
+        'Symfony\\Component\\Asset\\Exception\\InvalidArgumentException' => __DIR__ . '/..' . '/symfony/asset/Exception/InvalidArgumentException.php',
+        'Symfony\\Component\\Asset\\Exception\\LogicException' => __DIR__ . '/..' . '/symfony/asset/Exception/LogicException.php',
+        'Symfony\\Component\\Asset\\Exception\\RuntimeException' => __DIR__ . '/..' . '/symfony/asset/Exception/RuntimeException.php',
+        'Symfony\\Component\\Asset\\Package' => __DIR__ . '/..' . '/symfony/asset/Package.php',
+        'Symfony\\Component\\Asset\\PackageInterface' => __DIR__ . '/..' . '/symfony/asset/PackageInterface.php',
+        'Symfony\\Component\\Asset\\Packages' => __DIR__ . '/..' . '/symfony/asset/Packages.php',
+        'Symfony\\Component\\Asset\\PathPackage' => __DIR__ . '/..' . '/symfony/asset/PathPackage.php',
+        'Symfony\\Component\\Asset\\UrlPackage' => __DIR__ . '/..' . '/symfony/asset/UrlPackage.php',
+        'Symfony\\Component\\Asset\\VersionStrategy\\EmptyVersionStrategy' => __DIR__ . '/..' . '/symfony/asset/VersionStrategy/EmptyVersionStrategy.php',
+        'Symfony\\Component\\Asset\\VersionStrategy\\JsonManifestVersionStrategy' => __DIR__ . '/..' . '/symfony/asset/VersionStrategy/JsonManifestVersionStrategy.php',
+        'Symfony\\Component\\Asset\\VersionStrategy\\RemoteJsonManifestVersionStrategy' => __DIR__ . '/..' . '/symfony/asset/VersionStrategy/RemoteJsonManifestVersionStrategy.php',
+        'Symfony\\Component\\Asset\\VersionStrategy\\StaticVersionStrategy' => __DIR__ . '/..' . '/symfony/asset/VersionStrategy/StaticVersionStrategy.php',
+        'Symfony\\Component\\Asset\\VersionStrategy\\VersionStrategyInterface' => __DIR__ . '/..' . '/symfony/asset/VersionStrategy/VersionStrategyInterface.php',
         'Symfony\\Component\\Cache\\Adapter\\AbstractAdapter' => __DIR__ . '/..' . '/symfony/cache/Adapter/AbstractAdapter.php',
         'Symfony\\Component\\Cache\\Adapter\\AbstractTagAwareAdapter' => __DIR__ . '/..' . '/symfony/cache/Adapter/AbstractTagAwareAdapter.php',
         'Symfony\\Component\\Cache\\Adapter\\AdapterInterface' => __DIR__ . '/..' . '/symfony/cache/Adapter/AdapterInterface.php',
@@ -2581,6 +2608,28 @@ class ComposerStaticInit17e30a4265d9ae40f1307685025c48e8
         'Symfony\\Runtime\\Symfony\\Component\\HttpFoundation\\RequestRuntime' => __DIR__ . '/..' . '/symfony/runtime/Internal/HttpFoundation/RequestRuntime.php',
         'Symfony\\Runtime\\Symfony\\Component\\HttpFoundation\\ResponseRuntime' => __DIR__ . '/..' . '/symfony/runtime/Internal/HttpFoundation/ResponseRuntime.php',
         'Symfony\\Runtime\\Symfony\\Component\\HttpKernel\\HttpKernelInterfaceRuntime' => __DIR__ . '/..' . '/symfony/runtime/Internal/HttpKernel/HttpKernelInterfaceRuntime.php',
+        'Symfony\\WebpackEncoreBundle\\Asset\\EntrypointLookup' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/Asset/EntrypointLookup.php',
+        'Symfony\\WebpackEncoreBundle\\Asset\\EntrypointLookupCollection' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/Asset/EntrypointLookupCollection.php',
+        'Symfony\\WebpackEncoreBundle\\Asset\\EntrypointLookupCollectionInterface' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/Asset/EntrypointLookupCollectionInterface.php',
+        'Symfony\\WebpackEncoreBundle\\Asset\\EntrypointLookupInterface' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/Asset/EntrypointLookupInterface.php',
+        'Symfony\\WebpackEncoreBundle\\Asset\\IntegrityDataProviderInterface' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/Asset/IntegrityDataProviderInterface.php',
+        'Symfony\\WebpackEncoreBundle\\Asset\\TagRenderer' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/Asset/TagRenderer.php',
+        'Symfony\\WebpackEncoreBundle\\CacheWarmer\\EntrypointCacheWarmer' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/CacheWarmer/EntrypointCacheWarmer.php',
+        'Symfony\\WebpackEncoreBundle\\DependencyInjection\\Configuration' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/DependencyInjection/Configuration.php',
+        'Symfony\\WebpackEncoreBundle\\DependencyInjection\\WebpackEncoreExtension' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/DependencyInjection/WebpackEncoreExtension.php',
+        'Symfony\\WebpackEncoreBundle\\Dto\\AbstractStimulusDto' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/Dto/AbstractStimulusDto.php',
+        'Symfony\\WebpackEncoreBundle\\Dto\\StimulusActionsDto' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/Dto/StimulusActionsDto.php',
+        'Symfony\\WebpackEncoreBundle\\Dto\\StimulusControllersDto' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/Dto/StimulusControllersDto.php',
+        'Symfony\\WebpackEncoreBundle\\Dto\\StimulusTargetsDto' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/Dto/StimulusTargetsDto.php',
+        'Symfony\\WebpackEncoreBundle\\EventListener\\ExceptionListener' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/EventListener/ExceptionListener.php',
+        'Symfony\\WebpackEncoreBundle\\EventListener\\PreLoadAssetsEventListener' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/EventListener/PreLoadAssetsEventListener.php',
+        'Symfony\\WebpackEncoreBundle\\EventListener\\ResetAssetsEventListener' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/EventListener/ResetAssetsEventListener.php',
+        'Symfony\\WebpackEncoreBundle\\Event\\RenderAssetTagEvent' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/Event/RenderAssetTagEvent.php',
+        'Symfony\\WebpackEncoreBundle\\Exception\\EntrypointNotFoundException' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/Exception/EntrypointNotFoundException.php',
+        'Symfony\\WebpackEncoreBundle\\Exception\\UndefinedBuildException' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/Exception/UndefinedBuildException.php',
+        'Symfony\\WebpackEncoreBundle\\Twig\\EntryFilesTwigExtension' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/Twig/EntryFilesTwigExtension.php',
+        'Symfony\\WebpackEncoreBundle\\Twig\\StimulusTwigExtension' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/Twig/StimulusTwigExtension.php',
+        'Symfony\\WebpackEncoreBundle\\WebpackEncoreBundle' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/WebpackEncoreBundle.php',
         'Twig\\Cache\\CacheInterface' => __DIR__ . '/..' . '/twig/twig/src/Cache/CacheInterface.php',
         'Twig\\Cache\\FilesystemCache' => __DIR__ . '/..' . '/twig/twig/src/Cache/FilesystemCache.php',
         'Twig\\Cache\\NullCache' => __DIR__ . '/..' . '/twig/twig/src/Cache/NullCache.php',
