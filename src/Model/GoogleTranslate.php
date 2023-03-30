@@ -47,11 +47,15 @@ class GoogleTranslate
     /**
      * @param string $text
      * @return string[]
-     * @throws ServiceException
+     * @throws ServiceException|GoogleException
      */
     public function detectLanguage(string $text): array
     {
-        $translate = new TranslateClient();
+        $translate = new TranslateClient([
+        'keyFilePath' => $this->keyFilePath,
+        'projectId' => $this->projectId,
+        'requestTimeout' => 10
+    ]);
 
         return $translate->detectLanguage($text);
     }
