@@ -30,16 +30,7 @@ class TranslationController extends AbstractController
 
         if (!is_null($text) && !is_null($targetLanguage)) {
             try {
-                $sourceLanguage = $translate->detectLanguage($text);
-                $sourceLanguage = $sourceLanguage['languageCode'];
-
-                if ($sourceLanguage == $targetLanguage) {
-                    return $this->json([
-                        'status' => 'error',
-                        'text' => 'You can translate to the same language.'
-                    ]);
-                }
-                $translated = $translate->translate($text, $targetLanguage, $sourceLanguage);
+                $translated = $translate->translate($text, $targetLanguage);
             } catch (Exception $exception) {
                 $logger->error($exception->getMessage());
                 return $this->json(['status' => 'error', 'error' => $exception->getMessage()]);
